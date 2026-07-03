@@ -2,27 +2,23 @@
 
 **MCP server for [Stubborn](https://github.com/stubborn-ai/stubborn)** — exposes `get_context`, `list_symbols`, and `metrics` to Cursor and other MCP clients.
 
-Thin adapter over [`stubborn.api`](https://github.com/stubborn-ai/stubborn/blob/main/src/stubborn/api.py). All compile logic lives in **`stubborn-stub`**.
+[![PyPI](https://img.shields.io/pypi/v/stubborn-mcp)](https://pypi.org/project/stubborn-mcp/)
+
+Thin adapter over [`stubborn.api`](https://github.com/stubborn-ai/stubborn/blob/main/src/stubborn/api.py). All compile logic lives in **[`stubborn-stub`](https://pypi.org/project/stubborn-stub/)** (currently **0.9.0b4**).
 
 Part of the [stubborn-ai](https://github.com/stubborn-ai) program — see [stubborn-hub](https://github.com/stubborn-ai/stubborn-hub).
 
 ## Install
 
 ```bash
-pip install stubborn-mcp
+pip install stubborn-stub stubborn-mcp
 ```
 
-Requires a **SCIP-derived** `symbols.db` — build with the core compiler:
+Requires a **SCIP-derived** `symbols.db`:
 
 ```bash
-pip install stubborn-stub
 stubborn index --scip index.scip --out metadata/symbols.db
-```
-
-## Run
-
-```bash
-export STUBBORN_DB=/path/to/metadata/symbols.db
+export STUBBORN_DB=metadata/symbols.db
 stubborn-mcp
 ```
 
@@ -53,7 +49,7 @@ Module entry: `python -m stubborn_mcp`
 | `list_symbols` | Browse/search symbols by `stable_id` |
 | `metrics` | Compression KPI vs source tree |
 
-Full parameter reference: [docs/MCP.md](docs/MCP.md) · [stubborn MCP docs](https://github.com/stubborn-ai/stubborn/blob/main/docs/MCP.md)
+Full parameter reference: [docs/MCP.md](docs/MCP.md)
 
 ## Development
 
