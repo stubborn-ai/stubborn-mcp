@@ -5,12 +5,12 @@ build-backend = "hatchling.build"
 [project]
 name = "stubborn-mcp"
 version = "0.1.0b1"
-description = "MCP server for Stubborn — deterministic code context from SCIP symbol graphs"
+description = "MCP server for Stubborn — deterministic code and contract context"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 authors = [{ name = "Stubborn contributors" }]
-keywords = ["mcp", "scip", "cursor", "llm", "code-context", "stubborn"]
+keywords = ["mcp", "scip", "openapi", "cursor", "llm", "code-context", "stubborn"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",

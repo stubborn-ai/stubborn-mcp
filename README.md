@@ -1,10 +1,10 @@
 # stubborn-mcp
 
-**MCP server for [Stubborn](https://github.com/stubborn-ai/stubborn)** — exposes `get_context`, `list_symbols`, and `metrics` to Cursor and other MCP clients.
+**MCP server for [Stubborn](https://github.com/stubborn-ai/stubborn)** — exposes source-neutral code and contract graph tools to Cursor and other MCP clients.
 
 [![PyPI](https://img.shields.io/pypi/v/stubborn-mcp)](https://pypi.org/project/stubborn-mcp/)
 
-Thin adapter over [`stubborn.api`](https://github.com/stubborn-ai/stubborn/blob/main/src/stubborn/api.py). All compile logic lives in **[`stubborn-stub`](https://pypi.org/project/stubborn-stub/)** (currently **0.9.0b4**).
+Thin adapter over [`stubborn.api`](https://github.com/stubborn-ai/stubborn/blob/main/src/stubborn/api.py). All compile and contract graph logic lives in **[`stubborn-stub`](https://pypi.org/project/stubborn-stub/)**.
 
 Part of the [stubborn-ai](https://github.com/stubborn-ai) program — see [stubborn-hub](https://github.com/stubborn-ai/stubborn-hub).
 
@@ -14,10 +14,23 @@ Part of the [stubborn-ai](https://github.com/stubborn-ai) program — see [stubb
 pip install stubborn-stub stubborn-mcp
 ```
 
-Requires a **SCIP-derived** `symbols.db`:
+For binary/NDJSON SCIP indexing, install Stubborn with its SCIP extra:
 
 ```bash
+pip install "stubborn-stub[scip]" stubborn-mcp
 stubborn index --scip index.scip --out metadata/symbols.db
+export STUBBORN_DB=metadata/symbols.db
+stubborn-mcp
+```
+
+Contract-only databases are also supported:
+
+```bash
+stubborn index-openapi \
+  --openapi openapi.json \
+  --service customers-service \
+  --workspace petclinic \
+  --out metadata/symbols.db
 export STUBBORN_DB=metadata/symbols.db
 stubborn-mcp
 ```
@@ -45,8 +58,10 @@ Module entry: `python -m stubborn_mcp`
 
 | Tool | Purpose |
 |------|---------|
-| `get_context` | Prune + weave LLM context (`java-stub` or `stubborn-dsl`) |
+| `workspace_info` | Inspect workspace source kinds: code repos, contract sources, symbols, endpoints |
+| `get_context` | Prune + weave code or contract context (`java-stub` or `stubborn-dsl`) |
 | `list_symbols` | Browse/search symbols by `stable_id` |
+| `list_contracts` | Browse/search OpenAPI contract endpoint stable IDs and schema constraints |
 | `metrics` | Compression KPI vs source tree |
 
 Full parameter reference: [docs/MCP.md](docs/MCP.md)
