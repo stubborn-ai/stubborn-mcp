@@ -1,3 +1,3 @@
-from stubborn_mcp.server import main
+from stubborn_mcp.cli import main
 
 main()
