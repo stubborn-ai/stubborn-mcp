@@ -66,6 +66,18 @@ Module entry: `python -m stubborn_mcp`
 
 Full parameter reference: [docs/MCP.md](docs/MCP.md)
 
+## Setup diagnostics
+
+Read-only MCP and DB checks ([ADR-015](https://github.com/stubborn-ai/stubborn/blob/main/docs/adr/ADR-015-federated-doctor-diagnostics.md)) — does not start the MCP server:
+
+```bash
+export STUBBORN_DB=metadata/symbols.db
+stubborn-mcp doctor
+stubborn-mcp doctor --json
+```
+
+Aggregate with sibling packages: [stubborn-hub DEMO-LAUNCHERS](https://github.com/stubborn-ai/stubborn-hub/blob/main/docs/DEMO-LAUNCHERS.md).
+
 ## Development
 
 ```bash
