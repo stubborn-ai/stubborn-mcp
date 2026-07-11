@@ -6,9 +6,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.1.0b3] - 2026-07-12
+
 ### Added
 
 - **`stubborn-mcp doctor`** — read-only MCP/DB setup diagnostics per [ADR-015](https://github.com/stubborn-ai/stubborn/blob/main/docs/adr/ADR-015-federated-doctor-diagnostics.md) (`--json`).
+
+### Changed
+
+- `stubborn-mcp` now expects `stubborn-stub>=0.9.0b6`, matching the bundled-fixture and doctor release line.
 
 ## [0.1.0b2] - 2026-07-04
 
@@ -29,4 +35,5 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - CI: pytest + ruff on Python 3.11–3.13.
 
 [0.1.0b1]: https://github.com/stubborn-ai/stubborn-mcp/releases/tag/v0.1.0b1
+[0.1.0b3]: https://github.com/stubborn-ai/stubborn-mcp/compare/v0.1.0b2...v0.1.0b3
 [0.1.0b2]: https://github.com/stubborn-ai/stubborn-mcp/compare/v0.1.0b1...v0.1.0b2
