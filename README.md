@@ -12,6 +12,7 @@ Part of the [stubborn-ai](https://github.com/stubborn-ai) program — see [stubb
 
 ```bash
 pip install stubborn-stub stubborn-mcp
+stubborn try   # bundled fixture smoke test (no Java)
 ```
 
 For binary/NDJSON SCIP indexing, install Stubborn with its SCIP extra:
