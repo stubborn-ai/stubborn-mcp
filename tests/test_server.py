@@ -19,7 +19,13 @@ FIXTURE = Path(__file__).resolve().parent / "fixtures" / "minimal.json"
 TARGET = "semanticdb maven com/example/OrderService#process()."
 ENDPOINT = "openapi customers-service:v1 GET /owners/{ownerId}"
 DEMO_JAVA = (
-    Path(__file__).resolve().parents[2] / "stubborn" / "examples" / "demo-spring" / "src" / "main" / "java"
+    Path(__file__).resolve().parents[2]
+    / "stubborn"
+    / "examples"
+    / "demo-spring"
+    / "src"
+    / "main"
+    / "java"
 )
 
 
