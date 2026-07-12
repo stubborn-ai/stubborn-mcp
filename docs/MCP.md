@@ -1,6 +1,6 @@
 # MCP server
 
-`stubborn-mcp` **0.1.0b3** on [PyPI](https://pypi.org/project/stubborn-mcp/) exposes Stubborn code and contract graph tools over **stdio**. Implementation delegates to [`stubborn.api`](https://github.com/stubborn-ai/stubborn/blob/main/src/stubborn/api.py) from **`stubborn-stub`**.
+`stubborn-mcp` **0.10.0b1** on [PyPI](https://pypi.org/project/stubborn-mcp/) exposes Stubborn code and contract graph tools over **stdio**. Implementation delegates to [`stubborn.api`](https://github.com/stubborn-ai/stubborn/blob/main/src/stubborn/api.py) from **`stubborn-stub`**.
 
 ## Install
 
